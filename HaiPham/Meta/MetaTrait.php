@@ -1,17 +1,16 @@
 <?php
 
-namespace App\HaiPham\Meta;
-
+namespace ThangLong\HaiPham\Meta;
 
 trait MetaTrait
 {
     /**
      * Gets all meta data
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function getAllMeta()
     {
-        return collect($this->meta->lists('value', 'key'));
+        return new Collection($this->meta->lists('value', 'key'));
     }
 
     /**
