@@ -5,7 +5,7 @@ Add this `code` to config/app.php
 
 ```php
 'providers' => [
-    App\HaiPham\Meta\MetaServiceProvider::class
+    HaiPham\Meta\MetaServiceProvider::class
 ]
 ```
 
@@ -17,7 +17,7 @@ Add the trait to all models that you want to attach meta data to:
 
 ```php
 use Illuminate\Database\Eloquent\Model;
-use App\HaiPham\Meta\MetaTrait;
+use HaiPham\Meta\MetaTrait;
 
 class Products extends Model
 {
