@@ -2,15 +2,16 @@
 
 namespace App\HaiPham\Meta;
 
+
 trait MetaTrait
 {
     /**
      * Gets all meta data
-     * @return Collection
+     * @return \Illuminate\Support\Collection
      */
     public function getAllMeta()
     {
-        return new Collection($this->meta->lists('value', 'key'));
+        return collect($this->meta->lists('value', 'key'));
     }
 
     /**
@@ -30,7 +31,7 @@ trait MetaTrait
         }
         else
         {
-            $collection = new Collection();
+            $collection = collect();
             foreach ($meta as $m)
             {
                 $collection->put($m->id, $m->value);
