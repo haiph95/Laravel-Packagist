@@ -1,6 +1,6 @@
 <?php
 
-namespace ThangLong\HaiPham\Meta;
+namespace App\HaiPham\Meta;
 
 trait MetaTrait
 {
@@ -10,7 +10,7 @@ trait MetaTrait
      */
     public function getAllMeta()
     {
-        return new Collection($this->meta->lists('value', 'key'));
+        return collect($this->meta->pluck('value', 'key'));
     }
 
     /**
